@@ -1,0 +1,78 @@
+﻿@page "/calculator"
+ <h1 class=text-danger> Calculator </h1>
+<br />
+<div >
+    <div class="row">
+        <div class="col-lg-3">
+            <p>First Number</p>
+        </div>
+        <div class="col-lg-4">
+            <input name="FirstNumber" @bind="@num1" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-3">
+            <p>Second Number</p>
+        </div>
+        <div class="col-lg-4">
+            <input name="SecondNumber" @bind="@num2" />
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-lg-3">
+            <p>Result</p>
+        </div>
+        <div class="col-lg-4">
+            <input readonly @bind="@finalresult" />
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-lg-2">
+            <button @onclick="AddNumbers" class="btn btn-secondary">Add (+)</button>
+        </div>
+        <div class="col-lg-2">
+            <button @onclick="SubtractNumbers" class="btn btn-primary">Subtract (−)</button>
+        </div>
+        <div class="col-lg-2">
+            <button @onclick="MultiplyNumbers" class="btn btn-success ">Multiply (X)</button>
+        </div>
+        <div class="col-lg-2">
+            <button @onclick="DivideNumbers" class="btn btn-info">Divide (/)</button>
+            </div>
+      </div>
+      <br />
+
+                   <marquee class=text-info><strong> .........Life is like a Calculator...... </strong></marquee>  
+                   <marquee class=text-danger><strong> The result depends on what you type in ..</strong></marquee>
+                   </div>
+
+@code {
+    Double num1, num2, finalresult;
+
+    void AddNumbers()
+    {
+        finalresult = (num1) + (num2);
+    }
+    void SubtractNumbers()
+    {
+        finalresult = (num1) - (num2);
+    }
+    void MultiplyNumbers()
+    {
+        finalresult = (num1) * (num2);
+    }
+    void DivideNumbers()
+    {
+        if (num2 != 0)
+        {
+            finalresult = (num1) / (num2);
+        }
+
+
+    }
+
+}
